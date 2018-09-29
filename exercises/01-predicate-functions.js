@@ -21,7 +21,21 @@
 // isVowel(99) --> false
 // isVowel({e: 'Elephant'}) --> false
 
+function isVowel (letter){
+    const vowelsStr = 'aeiou'
+    const allVowelsStr = vowelsStr + vowelsStr.toUpperCase()
+    const vowelsArr = allVowelsStr.split('')
+    console.log(vowelsArr)
+    console.log(letter)
+    if (vowelsArr.indexOf(letter)>-1){
+        return 'True'
+    } else {
+        return 'False'
+    }
 
+}
+
+console.log(isVowel('U'))
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write two functions: "isEven" and "isOdd" that take a number argument and

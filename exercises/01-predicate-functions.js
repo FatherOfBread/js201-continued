@@ -22,12 +22,16 @@
 // isVowel({e: 'Elephant'}) --> false
 
 function isVowel (letter){
+    // Create a vowel string
     const vowelsStr = 'aeiou'
+    // Include caps
     const allVowelsStr = vowelsStr + vowelsStr.toUpperCase()
+    // Convert the small and large cap vowels into an array
     const vowelsArr = allVowelsStr.split('')
-    console.log(vowelsArr)
-    console.log(letter)
-    if (vowelsArr.indexOf(letter)>-1){
+
+    // An index of 0-9 are acceptable
+    // A letter that is not in the array will return -1, that's unacceptable
+    if (vowelsArr.indexOf(letter)!==-1){
         return 'True'
     } else {
         return 'False'
@@ -35,7 +39,7 @@ function isVowel (letter){
 
 }
 
-console.log(isVowel('U'))
+//console.log(isVowel('U'))
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write two functions: "isEven" and "isOdd" that take a number argument and

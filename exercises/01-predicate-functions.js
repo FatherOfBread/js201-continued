@@ -22,24 +22,16 @@
 // isVowel({e: 'Elephant'}) --> false
 
 function isVowel (letter){
-    // Create a vowel string
-    const vowelsStr = 'aeiou'
-    // Include caps
-    const allVowelsStr = vowelsStr + vowelsStr.toUpperCase()
-    // Convert the small and large cap vowels into an array
-    const vowelsArr = allVowelsStr.split('')
+    const vowelsStr = 'aeiou'   // Create a vowel string
+    const allVowelsStr = vowelsStr + vowelsStr.toUpperCase()    // Include caps
+    const vowelsArr = allVowelsStr.split('')    // Convert into an array
 
-    // An index of 0-9 are acceptable
-    // A letter that is not in the array will return -1, that's unacceptable
-    if (vowelsArr.indexOf(letter)!==-1){
-        return 'True'
-    } else {
-        return 'False'
-    }
+    // A letter that is not in the array will return -1
+    // index of -1 + 1 = 0. Boolean of 0 is false
+    return Boolean(vowelsArr.indexOf(letter)+1)
 
 }
-
-//console.log(isVowel('U'))
+// console.log(isVowel('A')) //test
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write two functions: "isEven" and "isOdd" that take a number argument and
@@ -55,7 +47,13 @@ function isVowel (letter){
 // isOdd('7') --> false
 // isOdd(3.14) --> false
 
+function isEven(testNumber) {
+    return Boolean(testNumber%2 ==0 && Number.isInteger(testNumber))
+}
 
+function isOdd(testNumber) {
+    return Boolean(testNumber%2 !==0 && Number.isInteger(testNumber))
+}
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "isCapitalCity" that takes two arguments: a US state and a city name
@@ -70,3 +68,62 @@ function isVowel (letter){
 // isCapitalCity('Texas', 'Houston') --> false
 // isCapitalCity('Alaska', 'Juneau') --> true
 // isCapitalCity('Strawberry', 'Mango') --> false
+
+function isCapitalCity(state, capital) {
+    const map = {
+        "Alabama": "Montgomery",
+        "Alaska": "Juneau",
+        "Arizona": "Phoenix",
+        "Arkansas": "Little Rock",
+        "California": "Sacramento",
+        "Colorado": "Denver",
+        "Connecticut": "Hartford",
+        "Delaware": "Dover",
+        "Florida": "Tallahassee",
+        "Georgia": "Atlanta",
+        "Hawaii": "Honolulu",
+        "Idaho": "Boise",
+        "Illinois": "Springfield",
+        "Indiana": "Indianapolis",
+        "Iowa": "Des Moines",
+        "Kansas": "Topeka",
+        "Kentucky": "Frankfort",
+        "Louisiana": "Baton Rouge",
+        "Maine": "Augusta",
+        "Maryland": "Annapolis",
+        "Massachusetts": "Boston",
+        "Michigan": "Lansing",
+        "Minnesota": "Saint Paul",
+        "Mississippi": "Jackson",
+        "Missouri": "Jefferson City",
+        "Montana": "Helana",
+        "Nebraska": "Lincoln",
+        "Nevada": "Carson City",
+        "New Hampshire": "Concord",
+        "New Jersey": "Trenton",
+        "New Mexico": "Santa Fe",
+        "New York": "Albany",
+        "North Carolina": "Raleigh",
+        "North Dakota": "Bismarck",
+        "Ohio": "Columbus",
+        "Oklahoma": "Oklahoma City",
+        "Oregon": "Salem",
+        "Pennsylvania": "Harrisburg",
+        "Rhode Island": "Providence",
+        "South Carolina": "Columbia",
+        "South Dakota": "Pierre",
+        "Tennessee": "Nashville",
+        "Texas": "Austin",
+        "Utah": "Salt Lake City",
+        "Vermont": "Montpelier",
+        "Virginia": "Richmond",
+        "Washington": "Olympia",
+        "West Virginia": "Charleston",
+        "Wisconsin": "Madison",
+        "Wyoming": "Cheyenne"
+    }
+    var trueCapital = map[state]
+    return Boolean(capital == trueCapital)
+
+}
+// isCapitalCity('Virginia','Richmond')

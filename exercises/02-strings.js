@@ -8,7 +8,17 @@
 // Example:
 // reverse("skoob") --> "books"
 
-
+function reverse (sentence){
+    // Convert the string to an array
+    var sentenceArr = sentence.split('')
+    // reverse()	Reverses the order of the elements in an array
+    var sentenceArrRev = sentenceArr.reverse()
+    // convert the array back to string
+    // join()	Joins all elements of an array into a string
+    var sentenceReversed = sentenceArrRev.join('')
+    return sentenceReversed
+}
+// console.log(reverse('books'))   //test
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "findLongestWord" that takes a string of words and returns
@@ -18,7 +28,25 @@
 // Example:
 // findLongestWord('a book full of dogs') --> 'book'
 
-
+function findLongestWord (sentence){
+    // Convert the string to an array with each word as an element
+    const sentenceArr = sentence.split(' ')
+    console.log(sentenceArr)
+    // Create a new array with the length of each word
+    var wordLengthArr = []
+    var maxLength = 0
+    // For each word in the sentence array, get the length of the word
+    // Keep a record of the longest word and save as maxLength
+    sentenceArr.forEach(function(currentWord){
+        wordLengthArr.push(currentWord.length)
+        if (currentWord.length>maxLength){
+            maxLength = currentWord.length
+        }
+    })
+    // return the word with an index that matches the maxLength index
+    return sentenceArr[wordLengthArr.indexOf(maxLength)]
+}
+// console.log(findLongestWord('a book full of dogs')) // test
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function called "nicer"
@@ -29,7 +57,24 @@
 // nicer('mom get the heck in here and bring me a darn sandwich.')
 // > 'mom get the in here and bring me a sandwich.'
 
+// filter()	Creates a new array with every element in an array that pass a test
 
+function nicer (sentence){
+    const forbiddenWords = ['heck', 'darn', 'dang', 'crappy']
+    const sentenceArr = sentence.split(' ')
+    var newSentenceArr = sentenceArr
+    var newSentence = ''
+    forbiddenWords.forEach(function(currForbWord){
+        newSentenceArr = newSentenceArr.filter(function(currTestWord){
+            if(currTestWord !== currForbWord){
+                return currTestWord
+            }
+        })
+    })
+    newSentence = newSentenceArr.join(' ')
+    return newSentence
+}
+// console.log(nicer('mom get the heck in here and bring me a darn sandwich.'))
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function called "capitalizeAll"
@@ -40,7 +85,20 @@
 // capitalizeAll('hello world') --> 'Hello World'
 // capitalizeAll('every day is like sunday') --> 'Every Day Is Like Sunday'
 
+function capitalizeAll (sentence) {
+    const sentenceArr = sentence.split(' ')
+    var firstLetter = ''
+    var firstLetterCaps = ''
+    var newSentenceArr = []
+    sentenceArr.forEach(function(currentWord){
+        firstLetter = currentWord.charAt(0)
+        firstLetterCaps = firstLetter.toUpperCase()
+        newSentenceArr.push(currentWord.replace(firstLetter,firstLetterCaps))
+    })
+    return newSentenceArr.join(' ')
+}
 
+// console.log(capitalizeAll('every day is like sunday!')) //test
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function called "split" that does the same thing as String.split
@@ -52,3 +110,7 @@
 // split('a-b-c', '-') --> ['a', 'b', 'c']
 // split('APPLExxBANANAxxCHERRY', 'xx') --> ['APPLE', 'BANANA', 'CHERRY']
 // split('xyz', 'r') --> ['xyz']
+
+function split (sentence) {
+
+}

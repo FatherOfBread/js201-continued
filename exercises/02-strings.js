@@ -92,7 +92,7 @@ function capitalizeAll (sentence) {
     sentenceArr.forEach(function(currentWord){
         firstLetter = currentWord.charAt(0)
         firstLetterCaps = firstLetter.toUpperCase()
-        newSentenceArr.push(currentWord.replace(firstLetter,firstLetterCaps))
+        newSentenceArr.push(currentWord.replace(firstLetter,firstLetterCaps)) // Only replaces first occurance
     })
     return newSentenceArr.join(' ')
 }

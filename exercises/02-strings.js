@@ -31,7 +31,6 @@ function reverse (sentence){
 function findLongestWord (sentence){
     // Convert the string to an array with each word as an element
     const sentenceArr = sentence.split(' ')
-    console.log(sentenceArr)
     // Create a new array with the length of each word
     var wordLengthArr = []
     var maxLength = 0
@@ -111,6 +110,29 @@ function capitalizeAll (sentence) {
 // split('APPLExxBANANAxxCHERRY', 'xx') --> ['APPLE', 'BANANA', 'CHERRY']
 // split('xyz', 'r') --> ['xyz']
 
-function split (sentence) {
+// search()	Searches a string for a specified value,
+// or regular expression, and returns the position of the match
+// substring()	Extracts the characters from a string, between two specified indices
 
+
+function split (sentence, delimiter) {
+    var sentenceStr = sentence
+    var sentenceArr = []
+    var reg = new RegExp(delimiter,'g') // create a regexp of /delimiter/g
+    if (sentence.match(delimiter)){
+        var i = sentence.match(reg).length // count the number of delimiters in the sentence
+        for(i;i>0;i--){
+            sentenceArr.push(sentenceStr.slice(0,sentenceStr.search(delimiter)))
+            sentenceStr = sentenceStr.slice(sentence.search(delimiter)+delimiter.length,sentenceStr.length)      
+        }
+        sentenceStr = sentenceStr.slice(delimiter.length-1,sentenceStr.length)
+        sentenceArr.push(sentenceStr)
+    } else {
+        sentenceArr.push(sentence)
+    }
+    return sentenceArr
 }
+
+// console.log(split('a-b-c', '-'))
+// console.log(split('APPLExxBANANAxxCHERRY', 'xx'))
+// console.log(split('xyz', 'r'))

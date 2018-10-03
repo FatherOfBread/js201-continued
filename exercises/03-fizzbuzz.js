@@ -10,25 +10,25 @@
 // fizzbuzz(3) --> '..fizz'
 // fizzbuzz(15) --> '..fizz.buzzfizz..fizzbuzz.fizz..fizzbuzz'
 //
-// 
+//
 
-function fizzbuzz(targetNum) {
-	var fbString = ''
-	var i
-	var str
-	for (i = 1; i <= targetNum; i++) {
-		if (i % 3 !== 0 && i % 5 !== 0) {
-			str = '.'
-		} else if (i % 3 == 0 && i % 5 !== 0) {
-			str = 'fizz'
-		} else if (i % 3 !== 0 && i % 5 == 0) {
-			str = 'buzz'
-		} else {
-			str = 'fizzbuzz'
-		}
-		fbString = fbString.concat(str)
-	}
-	return fbString
+function fizzbuzz (targetNum) {
+  var fbString = ''
+  var i
+  var str
+  for (i = 1; i <= targetNum; i++) {
+    if (i % 3 !== 0 && i % 5 !== 0) {
+      str = '.'
+    } else if (i % 3 == 0 && i % 5 !== 0) {
+      str = 'fizz'
+    } else if (i % 3 !== 0 && i % 5 == 0) {
+      str = 'buzz'
+    } else {
+      str = 'fizzbuzz'
+    }
+    fbString = fbString.concat(str)
+  }
+  return fbString
 }
 
 // console.log(fizzbuzz(15))

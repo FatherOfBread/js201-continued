@@ -8,8 +8,6 @@
 // alphaSort(['b', 'a', 'c'])
 // > ['a', 'b', 'c']
 
-
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "strLengthSort" that sorts an array of strings by how long
 // each string is. Put the shortest strings first.
@@ -17,8 +15,6 @@
 // Examples:
 // strLengthSort(['Apple', 'Banana', 'Cherry'])
 // > ['Apple', 'Cherry', 'Banana']
-
-
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "sumSort". Given an array of array of numbers like:

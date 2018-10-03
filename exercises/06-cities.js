@@ -8,8 +8,6 @@
 // and returns a new array containing only those cities whose temperature is
 // cooler than 70 degrees.
 
-
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "cityNames" which takes an array of city objects like the
 // above problem and returns an array of the cities names.
